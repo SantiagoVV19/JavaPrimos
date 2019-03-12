@@ -21,9 +21,8 @@ public class Main {
 		
 		primo.establecer_limite(i,j);
 		
-		double resultado=Math.sqrt(j);
+		primo.ejecucion();
 		
-		System.out.println("el resultado es: " + resultado);
 		
 		superior.close();
 		inferior.close();
