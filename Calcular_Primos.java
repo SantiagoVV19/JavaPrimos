@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Calcular_Primos {
 	
-	private static int limite_superior;
-	private static int limite_inferior;
+	private  int limite_superior;
+	private  int limite_inferior;
 	
 	public Calcular_Primos(){
 		this(1,100);
