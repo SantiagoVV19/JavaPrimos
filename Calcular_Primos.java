@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class Calcular_Primos {
 	
-	private  int limite_superior;
-	private  int limite_inferior;
+	private static int limite_superior;
+	private static int limite_inferior;
 	
 	public Calcular_Primos(){
 		this(1,100);
 	}
 	
 	public Calcular_Primos(int m,int n){
-		this.limite_superior = n;
-		this.limite_inferior = m;
+		limite_superior = n;
+		limite_inferior = m;
 		
 	}
 	
@@ -27,10 +27,9 @@ public class Calcular_Primos {
 	
 	
 	public void establecer_limite(int x,int y) {
-		
-		int valor = (int) Math.sqrt(y);
-		limite_superior = valor;
+	
 		limite_inferior = x;
+		limite_superior = y;
 	}
 	
 	
@@ -45,18 +44,18 @@ public class Calcular_Primos {
 	
 	
 	
-	
-	public static int ListaPrimos() {
+	public static int[] ListaPrimos() {
 		
-		int valor = num_rango();
 		
-		int  lista[] = new int[valor];
+		
+		int  lista[] = new int[limite_superior];
 		int c = 0;
-		for ( int i = limite_inferior; i <= valor; i++ ) {
+		for ( int i = limite_inferior; i <= limite_superior; i++ ) {
 			
 			for( int j = 2; j <= i; j++) {
 				
 				if(i % j != 0){
+					System.out.print(" | " + i);
 					lista[c] = i;
 					c++;
 				}
@@ -69,8 +68,23 @@ public class Calcular_Primos {
 	}
 	
 	
+	public static void ejecucion() {
+		
+		num_rango();
+		int h[] = ListaPrimos();
+		write(h);
+		
+		
+	}
 	
-	
+	public static void write(int c[]) {
+		
+		for (int i = 0; i <= c.length;i++) {
+			
+			System.out.print(" | " + c[i]);
+		}
+		
+	}
 	
 	
 	public static boolean isPrime(final int n) {
